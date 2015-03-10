@@ -23,7 +23,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         
         imgFundoCad = new JLabel(); 
         imgFundoCad.setSize(1024, 768);
-        imgFundoCad.setIcon(new ImageIcon("images/fundoCad.jpg"));
+        imgFundoCad.setIcon(new ImageIcon("images/fundoCadastro.jpg"));
         
     	Container pane = this.getContentPane();
         
