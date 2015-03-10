@@ -5,6 +5,8 @@
  */
 package organizame;
 
+import Telas.TelaInicial;
+
 /**
  *
  * @author Tullius
@@ -15,7 +17,8 @@ public class OrganizaMe {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        new TelaInicial().setVisible(true);
     }
     
 }
