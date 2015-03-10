@@ -3,8 +3,10 @@ package Telas;
 
 import java.awt.Container;
 import javax.swing.ImageIcon;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -28,8 +30,9 @@ public class CadastrarTela extends javax.swing.JFrame {
         this.setSize(1024, 768);
         this.setResizable(false);
         this.setLocation(200, 100);
+        
     }
-    
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -91,6 +94,11 @@ public class CadastrarTela extends javax.swing.JFrame {
         CampoDuracao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoDuracaoActionPerformed(evt);
+            }
+        });
+        CampoDuracao.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoDuracaoKeyTyped(evt);
             }
         });
 
@@ -244,7 +252,7 @@ public class CadastrarTela extends javax.swing.JFrame {
                     .addComponent(LabelPais, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                     .addComponent(LabelAno, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CampoPais, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CampoAno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -295,7 +303,6 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void CampoAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoAnoActionPerformed
 
-      
 
     }//GEN-LAST:event_CampoAnoActionPerformed
 
@@ -339,9 +346,18 @@ public class CadastrarTela extends javax.swing.JFrame {
 
         String caracteres="0987654321";
             if(!caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();
-            }      
+                evt.consume();      
+            }   
+     
     }//GEN-LAST:event_CampoAnoKeyTyped
+
+    private void CampoDuracaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDuracaoKeyTyped
+            
+        String caracteres="0987654321";
+            if(!caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }     
+    }//GEN-LAST:event_CampoDuracaoKeyTyped
 
     /**
      * @param args the command line arguments

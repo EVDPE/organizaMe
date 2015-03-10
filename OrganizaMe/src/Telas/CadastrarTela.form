@@ -103,9 +103,9 @@
                   <Component id="LabelAno" alignment="3" pref="25" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CampoPais" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="CampoAno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="CampoPais" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="CampoAno" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -210,6 +210,7 @@
     <Component class="javax.swing.JTextField" name="CampoDuracao">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoDuracaoActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoDuracaoKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelPais">
