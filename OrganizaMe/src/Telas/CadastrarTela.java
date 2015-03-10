@@ -76,6 +76,11 @@ public class CadastrarTela extends javax.swing.JFrame {
                 CampoTituloActionPerformed(evt);
             }
         });
+        CampoTitulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoTituloKeyTyped(evt);
+            }
+        });
 
         LabelGenero.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelGenero.setText("Gênero:");
@@ -110,6 +115,11 @@ public class CadastrarTela extends javax.swing.JFrame {
                 CampoPaisActionPerformed(evt);
             }
         });
+        CampoPais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoPaisKeyTyped(evt);
+            }
+        });
 
         LabelAno.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelAno.setText("Ano de lançamento:");
@@ -133,6 +143,11 @@ public class CadastrarTela extends javax.swing.JFrame {
                 CampoDiretorActionPerformed(evt);
             }
         });
+        CampoDiretor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoDiretorKeyTyped(evt);
+            }
+        });
 
         LabelIdioma.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelIdioma.setText("Idioma:");
@@ -140,6 +155,11 @@ public class CadastrarTela extends javax.swing.JFrame {
         CampoIdioma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoIdiomaActionPerformed(evt);
+            }
+        });
+        CampoIdioma.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoIdiomaKeyTyped(evt);
             }
         });
 
@@ -158,6 +178,11 @@ public class CadastrarTela extends javax.swing.JFrame {
                 CampoTrilhaActionPerformed(evt);
             }
         });
+        CampoTrilha.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoTrilhaKeyTyped(evt);
+            }
+        });
 
         LabelTrailer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelTrailer.setText("Trailer:");
@@ -165,6 +190,11 @@ public class CadastrarTela extends javax.swing.JFrame {
         CampoTrailer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoTrailerActionPerformed(evt);
+            }
+        });
+        CampoTrailer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                CampoTrailerKeyTyped(evt);
             }
         });
 
@@ -358,6 +388,54 @@ public class CadastrarTela extends javax.swing.JFrame {
                 evt.consume();      
             }     
     }//GEN-LAST:event_CampoDuracaoKeyTyped
+
+    private void CampoTituloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTituloKeyTyped
+
+        String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }        
+    }//GEN-LAST:event_CampoTituloKeyTyped
+
+    private void CampoPaisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoPaisKeyTyped
+
+                String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }            
+    }//GEN-LAST:event_CampoPaisKeyTyped
+
+    private void CampoDiretorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDiretorKeyTyped
+
+                String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }     
+    }//GEN-LAST:event_CampoDiretorKeyTyped
+
+    private void CampoTrilhaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrilhaKeyTyped
+
+                String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }     
+    }//GEN-LAST:event_CampoTrilhaKeyTyped
+
+    private void CampoIdiomaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoIdiomaKeyTyped
+
+                String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }     
+    }//GEN-LAST:event_CampoIdiomaKeyTyped
+
+    private void CampoTrailerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrailerKeyTyped
+
+                String caracteres="0987654321";
+            if(caracteres.contains(evt.getKeyChar()+"")){
+                evt.consume();      
+            }     
+    }//GEN-LAST:event_CampoTrailerKeyTyped
 
     /**
      * @param args the command line arguments

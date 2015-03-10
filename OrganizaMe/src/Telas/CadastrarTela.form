@@ -161,6 +161,7 @@
     <Component class="javax.swing.JTextField" name="CampoTitulo">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoTituloActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoTituloKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelGenero">
@@ -224,6 +225,7 @@
     <Component class="javax.swing.JTextField" name="CampoPais">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoPaisActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoPaisKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelAno">
@@ -251,6 +253,7 @@
     <Component class="javax.swing.JTextField" name="CampoDiretor">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoDiretorActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoDiretorKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelIdioma">
@@ -264,6 +267,7 @@
     <Component class="javax.swing.JTextField" name="CampoIdioma">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoIdiomaActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoIdiomaKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelSinopse">
@@ -300,6 +304,7 @@
     <Component class="javax.swing.JTextField" name="CampoTrilha">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoTrilhaActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoTrilhaKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelTrailer">
@@ -313,6 +318,7 @@
     <Component class="javax.swing.JTextField" name="CampoTrailer">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CampoTrailerActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="CampoTrailerKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ButtonSalvar">
