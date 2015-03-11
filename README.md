@@ -1,14 +1,14 @@
 # OrganizaMe
 
-### Version
-1.0.0
+## Create an app to manage movies with Java
+OrganizaMe is an open source Java software that lets you manage your movies.
 
-### Objetivos
+### Main objectives:
 
-* Cadastrar;
-* Listar;
-* Visualizar resumo;
-* Marcar se já assistiu;
-* Adicionar comentário;
-* Assistir trailer;
-* Escutar trilha sonora;
+* registering;
+* list;
+* mark if ever watched;
+* add comment;
+* watch trailer;
+* listen soundtrack
+
