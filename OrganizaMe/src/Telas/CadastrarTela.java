@@ -346,6 +346,17 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
 
+        JOptionPane.showMessageDialog(null, "Filme cadastrado");
+        
+                      Object[] options = { "Sim", "Não" };  
+            int i = JOptionPane.showOptionDialog(null,  
+                    "Deseja cadastrar outro filme?", "Cadastrar outro filme?",  
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,  
+                    options, options[0]);  
+            if (i == JOptionPane.NO_OPTION) {  
+                dispose();
+            }  
+        
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
@@ -358,8 +369,7 @@ public class CadastrarTela extends javax.swing.JFrame {
                     options, options[0]);  
             if (i == JOptionPane.YES_OPTION) {  
                 dispose();
-            }  
-        
+            }         
         
         
     }//GEN-LAST:event_ButtonCancelarActionPerformed
