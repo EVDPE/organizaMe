@@ -8,6 +8,7 @@ package Telas;
 import java.awt.Container;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,7 @@ public class VisualizarTela extends javax.swing.JFrame {
         
                 imgFundoCad = new JLabel(); 
         imgFundoCad.setSize(1024, 768);
-        imgFundoCad.setIcon(new ImageIcon("images/fundoCad.jpg"));
+        imgFundoCad.setIcon(new ImageIcon("images/fundoVisualizar.jpg"));
         
     	Container pane = this.getContentPane();
         
@@ -42,22 +43,53 @@ public class VisualizarTela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ButtonVoltar = new javax.swing.JButton();
+        LabelTituloCadastro = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 768));
+
+        ButtonVoltar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ButtonVoltar.setText("Voltar");
+        ButtonVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonVoltarActionPerformed(evt);
+            }
+        });
+
+        LabelTituloCadastro.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        LabelTituloCadastro.setText("Filmes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(438, 438, 438)
+                .addComponent(LabelTituloCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(438, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelTituloCadastro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 598, Short.MAX_VALUE)
+                .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVoltarActionPerformed
+
+                   dispose();
+              
+    }//GEN-LAST:event_ButtonVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,5 +127,7 @@ public class VisualizarTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonVoltar;
+    private javax.swing.JLabel LabelTituloCadastro;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,14 +23,14 @@ public class TelaInicial extends javax.swing.JFrame {
         initComponents();
         
         imgFundo = new JLabel(); 
-        imgFundo.setSize(1024, 768);
-        imgFundo.setIcon(new ImageIcon("images/fundo.jpg"));
+        imgFundo.setSize(603, 400);
+        imgFundo.setIcon(new ImageIcon("images/fundoInicio.jpg"));
         
     	Container pane = this.getContentPane();
         
         pane.add(imgFundo);
         
-        this.setSize(1024, 768);
+        this.setSize(603, 400);
         this.setResizable(false);
         this.setLocation(200, 100);
     }
@@ -77,40 +77,41 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        LabelTituloInicial.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        LabelTituloInicial.setText("                        OrganizaMe - Gerenciar Filmes");
+        LabelTituloInicial.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        LabelTituloInicial.setText("OrganizaMe - Gerenciar Filmes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelTituloInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 995, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
             .addGroup(layout.createSequentialGroup()
-                .addGap(278, 278, 278)
+                .addGap(126, 126, 126)
                 .addComponent(ButtonCastrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(ButtonCancelar)
-                .addGap(263, 263, 263))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(126, 126, 126))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(ButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(LabelTituloInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(LabelTituloInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonCastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(244, 244, 244)
+                    .addComponent(ButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonCastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(ButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGap(54, 54, 54))
         );
 
         pack();
