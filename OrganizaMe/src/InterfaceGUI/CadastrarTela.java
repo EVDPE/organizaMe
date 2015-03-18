@@ -1,5 +1,5 @@
 
-package Telas;
+package InterfaceGUI;
 
 import java.awt.Container;
 import javax.swing.ImageIcon;

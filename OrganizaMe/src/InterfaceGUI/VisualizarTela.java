@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package InterfaceGUI;
 
 import java.awt.Container;
 import javax.swing.ImageIcon;
