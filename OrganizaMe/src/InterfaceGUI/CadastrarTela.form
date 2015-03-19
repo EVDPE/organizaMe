@@ -34,69 +34,62 @@
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
-                      <Component id="ButtonSalvar" min="-2" pref="103" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="210" max="-2" attributes="0"/>
-                      <Component id="ButtonCancelar" min="-2" pref="103" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ScrollPaneSinopse" min="-2" pref="850" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Component id="LabelTrilhasorona" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoTrilha" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoDiretor" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelDiretor" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelPais" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CampoTitulo" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Component id="LabelTitulo" min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Component id="CampoPais" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="LabelTrilhasorona" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Component id="CampoTrilha" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Component id="CampoDiretor" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Component id="LabelDiretor" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Component id="LabelPais" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Component id="LabelSinopse" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="CampoTitulo" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                                  <Component id="LabelTitulo" min="-2" pref="298" max="-2" attributes="0"/>
-                                                  <Component id="CampoPais" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="ComboBoxGenero" min="-2" pref="154" max="-2" attributes="0"/>
-                                                          <Component id="LabelGenero" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                                      <Component id="RadioButtonSim" min="-2" max="-2" attributes="0"/>
-                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                      <Component id="RadioButtonNao" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="RadioButtonSim" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                      <Component id="RadioButtonNao" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="LabelAssistiu" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LabelDuracao" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="CampoDuracao" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="CampoAno" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="CampoIdioma" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="CampoTrailer" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="LabelTrailer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelIdioma" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
-                                  <Component id="LabelAno" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Component id="ComboBoxGenero" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="LabelGenero" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LabelAssistiu" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="LabelDuracao" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoDuracao" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoAno" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoIdioma" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="CampoTrailer" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelTrailer" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelIdioma" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelAno" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ScrollPaneSinopse" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelSinopse" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="257" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="ScrollPaneComentario" min="-2" pref="298" max="-2" attributes="0"/>
+                          <Component id="LabelComentario" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="297" max="-2" attributes="0"/>
+                      <Component id="ButtonSalvar" min="-2" pref="103" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="ButtonCancelar" min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="87" max="32767" attributes="0"/>
@@ -156,13 +149,21 @@
                   <Component id="CampoTrailer" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Component id="LabelSinopse" pref="30" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="ScrollPaneSinopse" min="-2" pref="211" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ButtonSalvar" alignment="3" min="-2" pref="90" max="-2" attributes="0"/>
-                  <Component id="ButtonCancelar" alignment="3" min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="LabelSinopse" alignment="3" pref="30" max="32767" attributes="0"/>
+                  <Component id="LabelComentario" alignment="3" pref="30" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="ScrollPaneSinopse" min="-2" pref="211" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="ButtonSalvar" alignment="3" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="ButtonCancelar" alignment="3" min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="ScrollPaneComentario" min="-2" pref="211" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
           </Group>
@@ -405,6 +406,29 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonNaoActionPerformed"/>
       </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="ScrollPaneComentario">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="CampoComentario">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="LabelComentario">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Coment&#xe1;rio:"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

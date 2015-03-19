@@ -14,6 +14,7 @@ public class Filme {
     String genero;
     String ja_assistiu;
     String sinopse;
+    String comentario;
 
     public Long getId() {
         return id;
@@ -109,6 +110,14 @@ public class Filme {
 
     public void setSinopse(String sinopse) {
         this.sinopse = sinopse;
+    }
+    
+    public String getComentario(){
+        return comentario;
+    }
+    
+    public void setComentario(String comentario){
+        this.comentario = comentario;
     }
 
 }

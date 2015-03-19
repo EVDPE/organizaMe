@@ -20,7 +20,7 @@ public class FilmeDao {
     public void adicionar(Filme filmes) throws SQLException {
         //prepara conexão
         String sql = "INSERT INTO filme (titulo, pais, diretor, trilha_sonora, tempo_duracao, ano_lancamento, "
-                + "idioma, trailer, genero, ja_assistiu, sinopse) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+                + "idioma, trailer, genero, ja_assistiu, sinopse, comentario) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
         PreparedStatement stmt = conexao.prepareStatement(sql);
 
@@ -36,6 +36,7 @@ public class FilmeDao {
         stmt.setString(9, filmes.getGenero());
         stmt.setString(10, filmes.getJa_assistiu());
         stmt.setString(11, filmes.getSinopse());
+        stmt.setString(12, filmes.getComentario());
 
         //executa código SQL e depois fecha conexão
         stmt.execute();
@@ -45,7 +46,7 @@ public class FilmeDao {
     public void altera(Filme filmes) throws SQLException {
 
         String sql = "UPDATE filme set titulo=?, pais=?, diretor=?, trilha_sonora=?, tempo_duracao=?, "
-                + "ano_lancamento=?, idioma=?, trailer=?, genero=?, ja_assistiu=?, sinopse=? where id=?";
+                + "ano_lancamento=?, idioma=?, trailer=?, genero=?, ja_assistiu=?, sinopse=?, comentario=? where id=?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
 
         stmt.setString(1, filmes.getTitulo());
@@ -59,7 +60,8 @@ public class FilmeDao {
         stmt.setString(9, filmes.getGenero());
         stmt.setString(10, filmes.getJa_assistiu());
         stmt.setString(11, filmes.getSinopse());
-        stmt.setLong(12, filmes.getId());
+        stmt.setString(12, filmes.getComentario());
+        stmt.setLong(13, filmes.getId());
 
         stmt.execute();
         stmt.close();
@@ -98,6 +100,7 @@ public class FilmeDao {
             filmes.setGenero(rs.getString("genero"));
             filmes.setJa_assistiu(rs.getString("ja_assistiu"));
             filmes.setSinopse(rs.getString("sinopse"));
+            filmes.setComentario(rs.getString("comentario"));
 
             minhaLista.add(filmes);
         }
