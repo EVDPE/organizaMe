@@ -1,10 +1,15 @@
-
 package InterfaceGUI;
 
+import Logica.Filme;
+import dao.FilmeDao;
 import java.awt.Container;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Tullius
@@ -12,23 +17,22 @@ import javax.swing.JOptionPane;
 public class CadastrarTela extends javax.swing.JFrame {
 
     private JLabel imgFundoVisu;
-            
+
     public CadastrarTela() {
         initComponents();
-     
-        imgFundoVisu = new JLabel(); 
+
+        imgFundoVisu = new JLabel();
         imgFundoVisu.setSize(1024, 768);
         imgFundoVisu.setIcon(new ImageIcon("images/fundoCadastro.jpg"));
         this.setSize(1024, 768);
         this.setResizable(false);
         this.setLocation(200, 100);
-        
-    	Container pane = this.getContentPane();        
+
+        Container pane = this.getContentPane();
         pane.add(imgFundoVisu);
-        
+
     }
 
-        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -219,6 +223,8 @@ public class CadastrarTela extends javax.swing.JFrame {
 
         buttonGroupAssistiu.add(RadioButtonSim);
         RadioButtonSim.setText("Sim");
+        RadioButtonSim.setToolTipText("");
+        RadioButtonSim.setActionCommand("S");
         RadioButtonSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioButtonSimActionPerformed(evt);
@@ -228,6 +234,8 @@ public class CadastrarTela extends javax.swing.JFrame {
         buttonGroupAssistiu.add(RadioButtonNao);
         RadioButtonNao.setSelected(true);
         RadioButtonNao.setText("Não");
+        RadioButtonNao.setToolTipText("");
+        RadioButtonNao.setActionCommand("N");
         RadioButtonNao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioButtonNaoActionPerformed(evt);
@@ -380,32 +388,84 @@ public class CadastrarTela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoIdiomaActionPerformed
 
+    //valida dados digitados
+    public boolean verificaDados() {
+
+        if (!CampoTitulo.getText().equals("")) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Campos Título não preenchido");
+            return false;
+        }
+    }
+
+    //adiciona dados digitado ao banco
+
+    public void cadastro() throws SQLException {
+
+        Filme filmes = new Filme();
+
+        filmes.setTitulo(CampoTitulo.getText());
+        filmes.setPais(CampoPais.getText());
+        filmes.setDiretor(CampoDiretor.getText());
+        filmes.setTrilha_sonora(CampoTrilha.getText());
+        filmes.setTempo_duracao(CampoDuracao.getText());
+        filmes.setAno_lancamento(CampoAno.getText());
+        filmes.setIdioma(CampoIdioma.getText());
+        filmes.setTrailer(CampoTrailer.getText());
+        filmes.setGenero(ComboBoxGenero.getSelectedItem().toString());
+        filmes.setJa_assistiu(buttonGroupAssistiu.getSelection().getActionCommand());
+        filmes.setSinopse(CampoSinopse.getText());
+
+        FilmeDao dao = new FilmeDao();
+        dao.adicionar(filmes);
+
+    }
+
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
 
-        JOptionPane.showMessageDialog(null, "Filme cadastrado");
+        if (verificaDados()) {
+            try {
+                cadastro();
+                JOptionPane.showMessageDialog(null, "Filme cadastrado");
+            } catch (SQLException ex) {
+                Logger.getLogger(CadastrarTela.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        Object[] options = {"Sim", "Não"};
+        int i = JOptionPane.showOptionDialog(null,
+                "Deseja cadastrar outro filme?", "Cadastrar outro filme?",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                options, options[0]);
+        if (i == JOptionPane.NO_OPTION) {
+            dispose();
+        }else{
+        CampoTitulo.setText("");
+        CampoPais.setText("");
+        CampoDiretor.setText("");
+        CampoTrilha.setText("");
+        CampoDuracao.setText("");
+        CampoAno.setText("");
+        CampoIdioma.setText("");
+        CampoTrailer.setText("");
+        CampoSinopse.setText("");
         
-                      Object[] options = { "Sim", "Não" };  
-            int i = JOptionPane.showOptionDialog(null,  
-                    "Deseja cadastrar outro filme?", "Cadastrar outro filme?",  
-                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,  
-                    options, options[0]);  
-            if (i == JOptionPane.NO_OPTION) {  
-                dispose();
-            }          
+        }
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
 
-              Object[] options = { "Sim", "Não" };  
-            int i = JOptionPane.showOptionDialog(null,  
-                    "Tem certeza que deseja Cancelar?", "Cancelar?",  
-                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,  
-                    options, options[0]);  
-            if (i == JOptionPane.YES_OPTION) {  
-                dispose();
-            }                 
-        
+        Object[] options = {"Sim", "Não"};
+        int i = JOptionPane.showOptionDialog(null,
+                "Tem certeza que deseja Cancelar?", "Cancelar?",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                options, options[0]);
+        if (i == JOptionPane.YES_OPTION) {
+            dispose();
+        }
+
     }//GEN-LAST:event_ButtonCancelarActionPerformed
 
     private void CampoTrilhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoTrilhaActionPerformed
@@ -418,79 +478,79 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void CampoAnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoAnoKeyTyped
 
-        String caracteres="0987654321";
-            if(!caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }   
-     
+        String caracteres = "0987654321";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+
     }//GEN-LAST:event_CampoAnoKeyTyped
 
     private void CampoDuracaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDuracaoKeyTyped
-            
-        String caracteres="0987654321";
-            if(!caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }     
+
+        String caracteres = "0987654321";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoDuracaoKeyTyped
 
     private void CampoTituloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTituloKeyTyped
 
-        String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }        
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoTituloKeyTyped
 
     private void CampoPaisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoPaisKeyTyped
 
-                String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }            
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoPaisKeyTyped
 
     private void CampoDiretorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDiretorKeyTyped
 
-                String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }     
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoDiretorKeyTyped
 
     private void CampoTrilhaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrilhaKeyTyped
 
-                String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }     
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoTrilhaKeyTyped
 
     private void CampoIdiomaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoIdiomaKeyTyped
 
-                String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }     
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoIdiomaKeyTyped
 
     private void CampoTrailerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrailerKeyTyped
 
-                String caracteres="0987654321";
-            if(caracteres.contains(evt.getKeyChar()+"")){
-                evt.consume();      
-            }     
+        String caracteres = "0987654321";
+        if (caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
     }//GEN-LAST:event_CampoTrailerKeyTyped
 
     private void RadioButtonSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonSimActionPerformed
-       
+
         RadioButtonSim.setFocusPainted(false);
-        
+
     }//GEN-LAST:event_RadioButtonSimActionPerformed
 
     private void RadioButtonNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonNaoActionPerformed
-       
+
         RadioButtonNao.setFocusPainted(false);
-        
+
     }//GEN-LAST:event_RadioButtonNaoActionPerformed
 
     /**

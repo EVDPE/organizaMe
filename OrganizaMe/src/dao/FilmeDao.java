@@ -20,7 +20,7 @@ public class FilmeDao {
     public void adicionar(Filme filmes) throws SQLException {
         //prepara conexão
         String sql = "INSERT INTO filme (titulo, pais, diretor, trilha_sonora, tempo_duracao, ano_lancamento, "
-                + "idioma, trailer, genero, ja_assistiu, sinopse) VALUES (?,?,?,?,?,?,?,?,?,?, ?)";
+                + "idioma, trailer, genero, ja_assistiu, sinopse) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         PreparedStatement stmt = conexao.prepareStatement(sql);
 
@@ -59,6 +59,7 @@ public class FilmeDao {
         stmt.setString(9, filmes.getGenero());
         stmt.setString(10, filmes.getJa_assistiu());
         stmt.setString(11, filmes.getSinopse());
+        stmt.setLong(12, filmes.getId());
 
         stmt.execute();
         stmt.close();
@@ -75,7 +76,7 @@ public class FilmeDao {
 
     public List<Filme> getLista() throws SQLException {
 
-        String sql = "SELECT * from filme where nome like ?";
+        String sql = "SELECT * from filme";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
         //stmt.setString(1, titulo);
         ResultSet rs = stmt.executeQuery();
@@ -84,7 +85,7 @@ public class FilmeDao {
 
         while (rs.next()) {
             Filme filmes = new Filme();
-
+           
             filmes.setId(Long.valueOf(rs.getString("id")));
             filmes.setTitulo(rs.getString("titulo"));
             filmes.setPais(rs.getString("pais"));
@@ -99,7 +100,6 @@ public class FilmeDao {
             filmes.setSinopse(rs.getString("sinopse"));
 
             minhaLista.add(filmes);
-
         }
         rs.close();
         stmt.close();
