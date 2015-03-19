@@ -5,14 +5,18 @@
  */
 package dao;
 
+
 import Logica.Filme;
 import java.sql.SQLException;
+import java.util.List;
+
+
 
 public class testaDao {
     
     public static void main(String[] args) throws SQLException{
         
-        Filme filmes = new Filme();
+       /* Filme filmes = new Filme();
         
         filmes.setTitulo("homem aranha");
         filmes.setPais("EUA");
@@ -29,6 +33,12 @@ public class testaDao {
         FilmeDao dao = new FilmeDao();
         dao.adicionar(filmes);
         System.out.println("Filme adicionado");
+        */
+        
+        FilmeDao dao = new FilmeDao();
+        
+        List<Filme> minhaLista = dao.getLista();
+        
         
     }
 }

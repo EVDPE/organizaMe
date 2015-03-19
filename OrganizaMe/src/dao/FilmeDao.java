@@ -4,7 +4,10 @@ import Logica.Filme;
 import conexao.banco.CriaConexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FilmeDao {
 
@@ -68,5 +71,39 @@ public class FilmeDao {
         stmt.setLong(1, filmes.getId());
         stmt.execute();
         stmt.close();
+    }
+
+    public List<Filme> getLista() throws SQLException {
+
+        String sql = "SELECT * from filme where nome like ?";
+        PreparedStatement stmt = this.conexao.prepareStatement(sql);
+        //stmt.setString(1, titulo);
+        ResultSet rs = stmt.executeQuery();
+
+        List<Filme> minhaLista = new ArrayList<Filme>();
+
+        while (rs.next()) {
+            Filme filmes = new Filme();
+
+            filmes.setId(Long.valueOf(rs.getString("id")));
+            filmes.setTitulo(rs.getString("titulo"));
+            filmes.setPais(rs.getString("pais"));
+            filmes.setDiretor(rs.getString("diretor"));
+            filmes.setTrilha_sonora(rs.getString("trilha_sonora"));
+            filmes.setTempo_duracao(rs.getString("tempo_duracao"));
+            filmes.setAno_lancamento(rs.getString("ano_lancamento"));
+            filmes.setIdioma(rs.getString("idioma"));
+            filmes.setTrailer(rs.getString("trailer"));
+            filmes.setGenero(rs.getString("genero"));
+            filmes.setJa_assistiu(rs.getString("ja_assistiu"));
+            filmes.setSinopse(rs.getString("sinopse"));
+
+            minhaLista.add(filmes);
+
+        }
+        rs.close();
+        stmt.close();
+        return minhaLista;
+
     }
 }
