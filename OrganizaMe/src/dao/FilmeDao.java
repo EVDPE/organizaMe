@@ -76,11 +76,11 @@ public class FilmeDao {
         stmt.close();
     }
 
-    public List<Filme> getLista() throws SQLException {
+    public List<Filme> getLista(String titulo) throws SQLException {
 
-        String sql = "SELECT * from filme";
+        String sql = "SELECT * from filme where titulo like ?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
-        //stmt.setString(1, titulo);
+        stmt.setString(1, titulo);
         ResultSet rs = stmt.executeQuery();
 
         List<Filme> minhaLista = new ArrayList<Filme>();
@@ -90,17 +90,17 @@ public class FilmeDao {
            
             filmes.setId(Long.valueOf(rs.getString("id")));
             filmes.setTitulo(rs.getString("titulo"));
-            filmes.setPais(rs.getString("pais"));
-            filmes.setDiretor(rs.getString("diretor"));
-            filmes.setTrilha_sonora(rs.getString("trilha_sonora"));
-            filmes.setTempo_duracao(rs.getString("tempo_duracao"));
-            filmes.setAno_lancamento(rs.getString("ano_lancamento"));
-            filmes.setIdioma(rs.getString("idioma"));
-            filmes.setTrailer(rs.getString("trailer"));
             filmes.setGenero(rs.getString("genero"));
+            filmes.setPais(rs.getString("pais"));
+            filmes.setAno_lancamento(rs.getString("ano_lancamento"));
+            filmes.setDiretor(rs.getString("diretor"));
+            filmes.setIdioma(rs.getString("idioma"));            
+            filmes.setTempo_duracao(rs.getString("tempo_duracao"));                       
             filmes.setJa_assistiu(rs.getString("ja_assistiu"));
             filmes.setSinopse(rs.getString("sinopse"));
             filmes.setComentario(rs.getString("comentario"));
+            filmes.setTrilha_sonora(rs.getString("trilha_sonora"));
+            filmes.setTrailer(rs.getString("trailer")); 
 
             minhaLista.add(filmes);
         }

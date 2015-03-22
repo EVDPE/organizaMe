@@ -78,6 +78,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         LabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelTitulo.setText("Título:");
 
+        CampoTitulo.setToolTipText("");
         CampoTitulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoTituloActionPerformed(evt);
@@ -407,9 +408,13 @@ public class CadastrarTela extends javax.swing.JFrame {
             return true;
         } else {
             JOptionPane.showMessageDialog(null, "Campos Título não preenchido");
+                        
+            CampoTitulo.setText("Preenchimento obrigatório");
+            
             return false;
         }
     }
+    
 
     //adiciona dados digitado ao banco
 
@@ -437,17 +442,13 @@ public class CadastrarTela extends javax.swing.JFrame {
     }
 
     private void ButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSalvarActionPerformed
-
+     
+              
         if (verificaDados()) {
             try {
                 cadastro();
                 JOptionPane.showMessageDialog(null, "Filme cadastrado");
-            } catch (SQLException ex) {
-                Logger.getLogger(CadastrarTela.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-
-        Object[] options = {"Sim", "Não"};
+                        Object[] options = {"Sim", "Não"};
         int i = JOptionPane.showOptionDialog(null,
                 "Deseja cadastrar outro filme?", "Cadastrar outro filme?",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
@@ -466,6 +467,10 @@ public class CadastrarTela extends javax.swing.JFrame {
         CampoSinopse.setText("");
         CampoComentario.setText("");
         
+        }
+            } catch (SQLException ex) {
+                Logger.getLogger(CadastrarTela.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
     }//GEN-LAST:event_ButtonSalvarActionPerformed

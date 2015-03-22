@@ -5,19 +5,24 @@
  */
 package InterfaceGUI;
 
+import Logica.Filme;
+import dao.FilmeDao;
 import java.awt.Container;
+import java.sql.SQLException;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Tullius
- */
+
 public class VisualizarTela extends javax.swing.JFrame {
-
-    private JLabel imgFundoCad;
     
+   
+    private final JLabel imgFundoCad;
+    
+           
     public VisualizarTela() {
         initComponents();
         
@@ -33,7 +38,48 @@ public class VisualizarTela extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocation(200, 100);
     }
+    
+        private void mostraPesquisa(List<Filme> filmes) {
+            if(filmes.size() == 0){
+                JOptionPane.showMessageDialog(null, "Nenhum filme encontrado.");
+            }else{
+                String[] linha = new String[]{null, null, null, null, null, null, null, null, null, null, null, null, null};
+                for (int i = 0; i < filmes.size(); i++){
+                    tmFilmes.addRow(linha);
+                    tmFilmes.setValueAt(filmes.get(i).getTitulo(), i, 0);
+                    tmFilmes.setValueAt(filmes.get(i).getGenero(), i, 1);
+                    tmFilmes.setValueAt(filmes.get(i).getPais(), i, 2);
+                    tmFilmes.setValueAt(filmes.get(i).getAno_lancamento(), i, 3);
+                    tmFilmes.setValueAt(filmes.get(i).getDiretor(), i, 4);
+                    tmFilmes.setValueAt(filmes.get(i).getIdioma(), i, 5);
+                    tmFilmes.setValueAt(filmes.get(i).getTempo_duracao(), i, 6);
+                    tmFilmes.setValueAt(filmes.get(i).getJa_assistiu(), i, 7);
+                    tmFilmes.setValueAt(filmes.get(i).getSinopse(), i, 8);
+                    tmFilmes.setValueAt(filmes.get(i).getComentario(), i, 9);
+                    tmFilmes.setValueAt(filmes.get(i).getTrilha_sonora(), i, 10);
+                    tmFilmes.setValueAt(filmes.get(i).getTrailer(), i, 11);   
+                    
+                    
+                }
+ 
+            }
+    }
+    
+    //define modelo da tabela
+    DefaultTableModel tmFilmes = new DefaultTableModel(null, new String[]{"Título", "Gênero", "País de origem", "Ano de lançamento", "Diretor", "Idioma", 
+    "Tempo de duração", "Assistiu?", "Sinopse", "Comentário", "Trilha sonora", "Trailer"});
+    
+    List<Filme> filmes;
+    ListSelectionModel lsmFilme;
 
+    
+    public void listarFilmes() throws SQLException{
+        
+        FilmeDao dao = new FilmeDao();
+        filmes = dao.getLista("%" + CampoPesquisa.getText() + "%");
+        mostraPesquisa(filmes);
+                
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +91,10 @@ public class VisualizarTela extends javax.swing.JFrame {
 
         ButtonVoltar = new javax.swing.JButton();
         LabelTituloCadastro = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTFilmes = new javax.swing.JTable();
+        CampoPesquisa = new javax.swing.JTextField();
+        ButtonPesquisa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,25 +109,51 @@ public class VisualizarTela extends javax.swing.JFrame {
         LabelTituloCadastro.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         LabelTituloCadastro.setText("Filmes");
 
+        jTFilmes.setModel(tmFilmes);
+        jScrollPane1.setViewportView(jTFilmes);
+
+        ButtonPesquisa.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        ButtonPesquisa.setText("Pesquisar");
+        ButtonPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonPesquisaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(923, Short.MAX_VALUE)
+                        .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonPesquisa)
+                        .addGap(3, 3, 3)
+                        .addComponent(LabelTituloCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(438, 438, 438)
-                .addComponent(LabelTituloCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(438, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelTituloCadastro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 598, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelTituloCadastro))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -90,6 +166,17 @@ public class VisualizarTela extends javax.swing.JFrame {
                    dispose();
               
     }//GEN-LAST:event_ButtonVoltarActionPerformed
+
+    private void ButtonPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonPesquisaActionPerformed
+
+        try {
+            listarFilmes();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Problama na pesquisa" + ex);
+        }
+        
+        
+    }//GEN-LAST:event_ButtonPesquisaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,7 +214,13 @@ public class VisualizarTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonPesquisa;
     private javax.swing.JButton ButtonVoltar;
+    private javax.swing.JTextField CampoPesquisa;
     private javax.swing.JLabel LabelTituloCadastro;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTFilmes;
     // End of variables declaration//GEN-END:variables
+
+
 }
