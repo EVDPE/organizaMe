@@ -10,8 +10,6 @@ import dao.FilmeDao;
 import java.awt.Container;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -99,6 +97,7 @@ public class EditarExcluirTela extends javax.swing.JFrame {
 
         if (jTFilmes.getSelectedRow() != -1) {
 
+            ResultId.setText(String.valueOf(filmes.get(tabela.getSelectedRow()).getId()));
             ResultTitulo.setText(filmes.get(tabela.getSelectedRow()).getTitulo());
             ResultGenero.setSelectedItem(filmes.get(tabela.getSelectedRow()).getGenero());
             ResultAno.setText(filmes.get(tabela.getSelectedRow()).getAno_lancamento());
@@ -171,6 +170,7 @@ public class EditarExcluirTela extends javax.swing.JFrame {
         RadioButtonNao = new javax.swing.JRadioButton();
         ButtonAlterar = new javax.swing.JButton();
         ButtonExcluir = new javax.swing.JButton();
+        ResultId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -244,8 +244,6 @@ public class EditarExcluirTela extends javax.swing.JFrame {
         ResultSinopse.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane2.setViewportView(ResultSinopse);
         ResultSinopse.setLineWrap(true);
-
-        ResultSinopse.setEditable(true);
 
         javax.swing.GroupLayout jPainelTextAreaSinopseLayout = new javax.swing.GroupLayout(jPainelTextAreaSinopse);
         jPainelTextAreaSinopse.setLayout(jPainelTextAreaSinopseLayout);
@@ -351,6 +349,12 @@ public class EditarExcluirTela extends javax.swing.JFrame {
             }
         });
 
+        ResultId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultIdActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -403,15 +407,18 @@ public class EditarExcluirTela extends javax.swing.JFrame {
                                 .addComponent(LabelTrailer)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ResultTrailer))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(LabelAno)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(ResultAno))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(LabelTitulo)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(ResultTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(LabelAno)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ResultAno))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(LabelTitulo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(ResultTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(131, 131, 131)
+                                .addComponent(ResultId)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 216, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -460,7 +467,9 @@ public class EditarExcluirTela extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(LabelAno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(ResultAno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(ResultAno, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(ResultId, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,7 +591,8 @@ public class EditarExcluirTela extends javax.swing.JFrame {
                Filme filmes = new Filme(); 
                FilmeDao dao = new FilmeDao();
              
-              filmes.setTitulo(ResultTitulo.getText());
+              filmes.setId(Long.valueOf(ResultId.getText()));
+              filmes.setTitulo(ResultTitulo.getText());              
               filmes.setPais(ResultPais.getText());
               filmes.setDiretor(ResultDiretor.getText());
               filmes.setTrilha_sonora(ResultTrilha.getText());
@@ -637,6 +647,10 @@ public class EditarExcluirTela extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ButtonExcluirActionPerformed
+
+    private void ResultIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResultIdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -697,6 +711,7 @@ public class EditarExcluirTela extends javax.swing.JFrame {
     private javax.swing.JTextField ResultDiretor;
     private javax.swing.JTextField ResultDuracao;
     private javax.swing.JComboBox ResultGenero;
+    private javax.swing.JTextField ResultId;
     private javax.swing.JTextField ResultIdioma;
     private javax.swing.JTextField ResultPais;
     private javax.swing.JTextArea ResultSinopse;

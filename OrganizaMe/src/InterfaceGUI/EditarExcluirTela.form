@@ -85,17 +85,21 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="ResultTrailer" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelAno" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ResultAno" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="LabelAno" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ResultAno" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="LabelTitulo" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ResultTitulo" min="-2" pref="260" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="LabelTitulo" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ResultTitulo" min="-2" pref="260" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="ResultId" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="216" max="32767" attributes="0"/>
@@ -161,7 +165,10 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="LabelAno" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="ResultAno" min="-2" pref="25" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="ResultAno" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                          <Component id="ResultId" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -408,7 +415,7 @@
                 </Property>
               </Properties>
               <AuxValues>
-                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ResultSinopse.setLineWrap(true);&#xa;&#xa;ResultSinopse.setEditable(true);"/>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ResultSinopse.setLineWrap(true);"/>
               </AuxValues>
             </Component>
           </SubComponents>
@@ -530,6 +537,11 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonExcluirActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ResultId">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResultIdActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

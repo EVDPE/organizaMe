@@ -43,10 +43,11 @@ public class FilmeDao {
         stmt.close();
     }
 
+
     public void altera(Filme filmes) throws SQLException {
 
         String sql = "UPDATE filme set titulo=?, pais=?, diretor=?, trilha_sonora=?, tempo_duracao=?, "
-                + "ano_lancamento=?, idioma=?, trailer=?, genero=?, ja_assistiu=?, sinopse=?, where id=?";
+                + "ano_lancamento=?, idioma=?, trailer=?, genero=?, ja_assistiu=?, sinopse=? where id=?";
         PreparedStatement stmt = this.conexao.prepareStatement(sql);
 
         stmt.setString(1, filmes.getTitulo());
@@ -60,6 +61,7 @@ public class FilmeDao {
         stmt.setString(9, filmes.getGenero());
         stmt.setString(10, filmes.getJa_assistiu());
         stmt.setString(11, filmes.getSinopse());
+        stmt.setLong(12, filmes.getId());
         //stmt.setString(12, filmes.getComentario());
 
         stmt.execute();
