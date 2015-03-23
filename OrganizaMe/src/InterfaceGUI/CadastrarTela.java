@@ -229,7 +229,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         buttonGroupAssistiu.add(RadioButtonSim);
         RadioButtonSim.setText("Sim");
         RadioButtonSim.setToolTipText("");
-        RadioButtonSim.setActionCommand("S");
+        RadioButtonSim.setActionCommand("SIM");
         RadioButtonSim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioButtonSimActionPerformed(evt);
@@ -240,7 +240,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         RadioButtonNao.setSelected(true);
         RadioButtonNao.setText("Não");
         RadioButtonNao.setToolTipText("");
-        RadioButtonNao.setActionCommand("N");
+        RadioButtonNao.setActionCommand("NÃO");
         RadioButtonNao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RadioButtonNaoActionPerformed(evt);
@@ -436,8 +436,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         filmes.setJa_assistiu(buttonGroupAssistiu.getSelection().getActionCommand());
         filmes.setSinopse(CampoSinopse.getText());
         filmes.setComentario(CampoComentario.getText());
-        
-
+      
         FilmeDao dao = new FilmeDao();
         dao.adicionar(filmes);
 

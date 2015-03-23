@@ -393,7 +393,7 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sim"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
-        <Property name="actionCommand" type="java.lang.String" value="S"/>
+        <Property name="actionCommand" type="java.lang.String" value="SIM"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonSimActionPerformed"/>
@@ -407,7 +407,7 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
-        <Property name="actionCommand" type="java.lang.String" value="N"/>
+        <Property name="actionCommand" type="java.lang.String" value="N&#xc3;O"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RadioButtonNaoActionPerformed"/>

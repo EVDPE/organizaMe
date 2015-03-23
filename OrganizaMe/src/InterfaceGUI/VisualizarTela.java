@@ -96,8 +96,7 @@ public class VisualizarTela extends javax.swing.JFrame {
             ResultDuracao.setText(filmes.get(tabela.getSelectedRow()).getTempo_duracao());
             ResultTrilha.setText(filmes.get(tabela.getSelectedRow()).getTrilha_sonora());
             ResultTrailer.setText(filmes.get(tabela.getSelectedRow()).getTrailer());
-            ResultAssistiu.setText(filmes.get(tabela.getSelectedRow()).getJa_assistiu());
-           // ResultAssistiu.setText(filmes.get(tabela.getSelectedRow()).getJa_assistiu());
+            ResultAssistiu.setText(filmes.get(tabela.getSelectedRow()).getJa_assistiu());           
             ResultSinopse.setText(filmes.get(tabela.getSelectedRow()).getSinopse());
 
         } else {
@@ -339,7 +338,7 @@ public class VisualizarTela extends javax.swing.JFrame {
                             .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(LabelAssistiu1)
-                                .addGap(222, 222, 222))))
+                                .addGap(250, 250, 250))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -414,7 +413,7 @@ public class VisualizarTela extends javax.swing.JFrame {
                         .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(11, 11, 11)
                         .addComponent(ButtonVoltar)
-                        .addContainerGap())))
+                        .addGap(10, 10, 10))))
         );
 
         pack();
