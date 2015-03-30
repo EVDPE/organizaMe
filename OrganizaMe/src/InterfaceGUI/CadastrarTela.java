@@ -3,9 +3,12 @@ package InterfaceGUI;
 import Logica.Filme;
 import dao.FilmeDao;
 import java.awt.Container;
+import java.awt.Image;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -18,8 +21,13 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private final JLabel imgFundoVisu;
 
-    public CadastrarTela() {
+    public CadastrarTela() throws IOException {
         initComponents();
+        
+        Image cadImg = ImageIO.read(getClass().getResource("/Imagens/add.png"));
+        setIconImage(cadImg);
+        
+        
 
         imgFundoVisu = new JLabel();
         imgFundoVisu.setSize(1024, 768);
@@ -70,7 +78,7 @@ public class CadastrarTela extends javax.swing.JFrame {
         LabelComentario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("OrganizaME - Organizador de Filmes");
+        setTitle("OrganizaME - Cadastrar");
 
         LabelTituloCadastro.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         LabelTituloCadastro.setText("                                 Cadastrar Filme");
@@ -603,7 +611,11 @@ public class CadastrarTela extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastrarTela().setVisible(true);
+                try {
+                    new CadastrarTela().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(CadastrarTela.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

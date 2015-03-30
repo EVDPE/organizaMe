@@ -1,7 +1,7 @@
 package dao;
 
 import Logica.Filme;
-import conexao.banco.CriaConexao;
+import ConexaoBanco.CriaConexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

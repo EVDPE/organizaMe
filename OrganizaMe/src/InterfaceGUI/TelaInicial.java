@@ -5,7 +5,13 @@
  */
 package InterfaceGUI;
 
+
 import java.awt.Container;
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,16 +25,27 @@ public class TelaInicial extends javax.swing.JFrame {
     private JLabel imgFundo;
     
 
-    public TelaInicial() {
+    public TelaInicial() throws IOException {
         initComponents();
         
-        imgFundo = new JLabel(); 
-        imgFundo.setSize(603, 400);
-        imgFundo.setIcon(new ImageIcon("images/fundoInicio.jpg"));
+        Image homeImg = ImageIO.read(getClass().getResource("/Imagens/home.gif"));
+        setIconImage(homeImg);
         
-    	Container pane = this.getContentPane();
+
         
-        pane.add(imgFundo);
+        //imgFundo = new JLabel(new ImageIcon(getClass().getResource("/imagens/fundoInicio.jpg")));
+        //imgFundo.setSize(603, 400);
+        
+        
+        
+        //imgFundo = new JLabel(); 
+        //imgFundo.setSize(603, 400);
+        //imgFundo.setIcon(new ImageIcon("src/imagens/fundoInicio.jpg"));
+ 
+        
+        
+    	//Container pane = this.getContentPane();        
+        //pane.add(imgFundo);
         
         this.setSize(603, 400);
         this.setResizable(false);
@@ -51,6 +68,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("OrganizaME");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -79,7 +97,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
 
         LabelTituloInicial.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
-        LabelTituloInicial.setText("OrganizaMe - Gerenciar Filmes");
+        LabelTituloInicial.setText("OrganizaMe - Gerenciador de Filmes");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Editar");
@@ -93,21 +111,22 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LabelTituloInicial)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ButtonCastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtonCancelar)
-                        .addGap(43, 43, 43)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ButtonSair, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ButtonCastrar)
+                                .addGap(82, 82, 82)
+                                .addComponent(ButtonCancelar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelTituloInicial))
+                        .addGap(60, 60, 60))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,13 +148,21 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void ButtonCastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCastrarActionPerformed
         
-        new CadastrarTela().setVisible(true);
+        try {
+            new CadastrarTela().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_ButtonCastrarActionPerformed
 
     private void ButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarActionPerformed
       
-        new VisualizarTela().setVisible(true);
+        try {
+            new VisualizarTela().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_ButtonCancelarActionPerformed
 
@@ -153,7 +180,11 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        new EditarExcluirTela().setVisible(true);
+        try {
+            new EditarExcluirTela().setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -187,7 +218,11 @@ public class TelaInicial extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicial().setVisible(true);
+                try {
+                    new TelaInicial().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
