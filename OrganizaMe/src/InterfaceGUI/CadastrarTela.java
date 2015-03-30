@@ -256,9 +256,11 @@ public class CadastrarTela extends javax.swing.JFrame {
         });
 
         CampoComentario.setColumns(20);
+        CampoComentario.setFont(new java.awt.Font("Comic Sans MS", 0, 13)); // NOI18N
         CampoComentario.setRows(5);
         ScrollPaneComentario.setViewportView(CampoComentario);
         CampoComentario.setLineWrap(true);
+        CampoComentario.setEditable(false);
 
         LabelComentario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         LabelComentario.setText("Comentário:");
@@ -515,18 +517,13 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void CampoDuracaoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoDuracaoKeyTyped
 
-        String caracteres = "0987654321";
-        if (!caracteres.contains(evt.getKeyChar() + "")) {
-            evt.consume();
-        }
+
     }//GEN-LAST:event_CampoDuracaoKeyTyped
 
     private void CampoTituloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTituloKeyTyped
 
-        String caracteres = "0987654321";
-        if (caracteres.contains(evt.getKeyChar() + "")) {
-            evt.consume();
-        }
+        
+
     }//GEN-LAST:event_CampoTituloKeyTyped
 
     private void CampoPaisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoPaisKeyTyped
@@ -547,10 +544,7 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void CampoTrilhaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrilhaKeyTyped
 
-        String caracteres = "0987654321";
-        if (caracteres.contains(evt.getKeyChar() + "")) {
-            evt.consume();
-        }
+
     }//GEN-LAST:event_CampoTrilhaKeyTyped
 
     private void CampoIdiomaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoIdiomaKeyTyped
@@ -563,10 +557,7 @@ public class CadastrarTela extends javax.swing.JFrame {
 
     private void CampoTrailerKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CampoTrailerKeyTyped
 
-        String caracteres = "0987654321";
-        if (caracteres.contains(evt.getKeyChar() + "")) {
-            evt.consume();
-        }
+
     }//GEN-LAST:event_CampoTrailerKeyTyped
 
     private void RadioButtonSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioButtonSimActionPerformed

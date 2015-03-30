@@ -7,8 +7,6 @@ import java.awt.Image;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -32,14 +30,14 @@ public class VisualizarTela extends javax.swing.JFrame {
         
 
         imgFundoCad = new JLabel();
-        imgFundoCad.setSize(1280, 768);
+        imgFundoCad.setSize(1280, 651);
         imgFundoCad.setIcon(new ImageIcon("images/fundoVisualizar2.jpg"));
 
         Container pane = this.getContentPane();
 
         pane.add(imgFundoCad);
 
-        this.setSize(1280, 768);
+        this.setSize(1280, 651);
         this.setResizable(false);
         this.setLocation(0, 100);
     }
@@ -131,30 +129,30 @@ public class VisualizarTela extends javax.swing.JFrame {
         jTFilmes = new javax.swing.JTable();
         CampoPesquisa = new javax.swing.JTextField();
         ButtonPesquisa = new javax.swing.JButton();
-        LabelTitulo = new javax.swing.JLabel();
-        LabelGenero = new javax.swing.JLabel();
-        LabelAno = new javax.swing.JLabel();
-        LabelPais = new javax.swing.JLabel();
-        LabelDiretor = new javax.swing.JLabel();
-        LabelIdioma = new javax.swing.JLabel();
-        LabelDuracao = new javax.swing.JLabel();
-        LabelTrilha = new javax.swing.JLabel();
-        LabelTrailer = new javax.swing.JLabel();
-        LabelAssistiu = new javax.swing.JLabel();
-        ResultTitulo = new javax.swing.JLabel();
-        ResultGenero = new javax.swing.JLabel();
-        ResultAno = new javax.swing.JLabel();
-        ResultDiretor = new javax.swing.JLabel();
-        ResultIdioma = new javax.swing.JLabel();
-        ResultDuracao = new javax.swing.JLabel();
-        ResultTrilha = new javax.swing.JLabel();
-        ResultTrailer = new javax.swing.JLabel();
-        ResultAssistiu = new javax.swing.JLabel();
-        ResultPais = new javax.swing.JLabel();
         LabelAssistiu1 = new javax.swing.JLabel();
         jPainelTextAreaSinopse = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ResultSinopse = new javax.swing.JTextArea();
+        LabelAssistiu = new javax.swing.JLabel();
+        ResultAssistiu = new javax.swing.JLabel();
+        LabelTrailer = new javax.swing.JLabel();
+        ResultTrailer = new javax.swing.JLabel();
+        LabelTrilha = new javax.swing.JLabel();
+        LabelDuracao = new javax.swing.JLabel();
+        LabelIdioma = new javax.swing.JLabel();
+        LabelDiretor = new javax.swing.JLabel();
+        LabelPais = new javax.swing.JLabel();
+        LabelAno = new javax.swing.JLabel();
+        LabelGenero = new javax.swing.JLabel();
+        LabelTitulo = new javax.swing.JLabel();
+        ResultTitulo = new javax.swing.JLabel();
+        ResultGenero = new javax.swing.JLabel();
+        ResultAno = new javax.swing.JLabel();
+        ResultPais = new javax.swing.JLabel();
+        ResultDiretor = new javax.swing.JLabel();
+        ResultIdioma = new javax.swing.JLabel();
+        ResultDuracao = new javax.swing.JLabel();
+        ResultTrilha = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("OrganizaME - Visualizar");
@@ -168,7 +166,7 @@ public class VisualizarTela extends javax.swing.JFrame {
         });
 
         LabelTituloCadastro.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        LabelTituloCadastro.setText("Filmes");
+        LabelTituloCadastro.setText("FILMES");
 
         jTFilmes.setModel(tmFilmes);
         jTFilmes.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -190,35 +188,68 @@ public class VisualizarTela extends javax.swing.JFrame {
             }
         });
 
-        LabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelTitulo.setText("Título:");
+        LabelAssistiu1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelAssistiu1.setText("Sinopse:");
 
-        LabelGenero.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelGenero.setText("Gênero:");
+        ResultSinopse.setColumns(20);
+        ResultSinopse.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
+        ResultSinopse.setRows(5);
+        ResultSinopse.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane2.setViewportView(ResultSinopse);
+        ResultSinopse.setLineWrap(true);
 
-        LabelAno.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelAno.setText("Ano de lançamento:");
+        ResultSinopse.setEditable(false);
 
-        LabelPais.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelPais.setText("País de origem:");
+        javax.swing.GroupLayout jPainelTextAreaSinopseLayout = new javax.swing.GroupLayout(jPainelTextAreaSinopse);
+        jPainelTextAreaSinopse.setLayout(jPainelTextAreaSinopseLayout);
+        jPainelTextAreaSinopseLayout.setHorizontalGroup(
+            jPainelTextAreaSinopseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPainelTextAreaSinopseLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPainelTextAreaSinopseLayout.setVerticalGroup(
+            jPainelTextAreaSinopseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+        );
 
-        LabelDiretor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelDiretor.setText("Diretor:");
+        LabelAssistiu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelAssistiu.setText("Já Assistiu?");
 
-        LabelIdioma.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelIdioma.setText("Idioma:");
-
-        LabelDuracao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelDuracao.setText("Tempo de duração:");
-
-        LabelTrilha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelTrilha.setText("Trilha sonora:");
+        ResultAssistiu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ResultAssistiu.setForeground(new java.awt.Color(0, 51, 102));
+        ResultAssistiu.setText(".");
 
         LabelTrailer.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         LabelTrailer.setText("Trailer:");
 
-        LabelAssistiu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelAssistiu.setText("Já Assistiu?");
+        ResultTrailer.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ResultTrailer.setForeground(new java.awt.Color(0, 51, 102));
+        ResultTrailer.setText(".");
+
+        LabelTrilha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelTrilha.setText("Trilha sonora:");
+
+        LabelDuracao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelDuracao.setText("Tempo de duração:");
+
+        LabelIdioma.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelIdioma.setText("Idioma:");
+
+        LabelDiretor.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelDiretor.setText("Diretor:");
+
+        LabelPais.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelPais.setText("País de origem:");
+
+        LabelAno.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelAno.setText("Ano de lançamento:");
+
+        LabelGenero.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelGenero.setText("Gênero:");
+
+        LabelTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        LabelTitulo.setText("Título:");
 
         ResultTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ResultTitulo.setForeground(new java.awt.Color(0, 51, 102));
@@ -231,6 +262,10 @@ public class VisualizarTela extends javax.swing.JFrame {
         ResultAno.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ResultAno.setForeground(new java.awt.Color(0, 51, 102));
         ResultAno.setText(".");
+
+        ResultPais.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        ResultPais.setForeground(new java.awt.Color(0, 51, 102));
+        ResultPais.setText(".");
 
         ResultDiretor.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ResultDiretor.setForeground(new java.awt.Color(0, 51, 102));
@@ -248,108 +283,68 @@ public class VisualizarTela extends javax.swing.JFrame {
         ResultTrilha.setForeground(new java.awt.Color(0, 51, 102));
         ResultTrilha.setText(".");
 
-        ResultTrailer.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        ResultTrailer.setForeground(new java.awt.Color(0, 51, 102));
-        ResultTrailer.setText(".");
-
-        ResultAssistiu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        ResultAssistiu.setForeground(new java.awt.Color(0, 51, 102));
-        ResultAssistiu.setText(".");
-
-        ResultPais.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        ResultPais.setForeground(new java.awt.Color(0, 51, 102));
-        ResultPais.setText(".");
-
-        LabelAssistiu1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        LabelAssistiu1.setText("Sinopse:");
-
-        ResultSinopse.setColumns(20);
-        ResultSinopse.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
-        ResultSinopse.setRows(5);
-        ResultSinopse.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jScrollPane2.setViewportView(ResultSinopse);
-        ResultSinopse.setLineWrap(true);
-
-        ResultSinopse.setEditable(false);
-
-        javax.swing.GroupLayout jPainelTextAreaSinopseLayout = new javax.swing.GroupLayout(jPainelTextAreaSinopse);
-        jPainelTextAreaSinopse.setLayout(jPainelTextAreaSinopseLayout);
-        jPainelTextAreaSinopseLayout.setHorizontalGroup(
-            jPainelTextAreaSinopseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
-        );
-        jPainelTextAreaSinopseLayout.setVerticalGroup(
-            jPainelTextAreaSinopseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
+                .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonPesquisa)
+                .addGap(110, 110, 110)
+                .addComponent(LabelTituloCadastro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelDuracao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultDuracao))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelGenero)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultGenero))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelDiretor)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultDiretor))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelIdioma)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultIdioma))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelTrailer)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultTrailer))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelAssistiu)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultAssistiu))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelTrilha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultTrilha))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelAno)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultAno))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelPais)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultPais))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LabelTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ResultTitulo)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 497, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(LabelAssistiu1)
-                                .addGap(250, 250, 250))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelDiretor)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ButtonPesquisa)
-                        .addGap(110, 110, 110)
-                        .addComponent(LabelTituloCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(ResultDiretor))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelIdioma)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultIdioma))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelTrailer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultTrailer))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelGenero)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultGenero))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelAno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultAno))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelPais)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultPais))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelTitulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelDuracao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultDuracao))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelTrilha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultTrilha))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelAssistiu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ResultAssistiu)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 628, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ButtonVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelAssistiu1, javax.swing.GroupLayout.Alignment.LEADING)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,20 +353,25 @@ public class VisualizarTela extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(LabelTituloCadastro))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CampoPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ButtonPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ResultTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelAssistiu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(ButtonPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(7, 7, 7)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonVoltar)
+                        .addContainerGap(28, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ResultTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelAssistiu1))
                         .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelGenero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -406,14 +406,9 @@ public class VisualizarTela extends javax.swing.JFrame {
                             .addComponent(ResultTrailer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LabelAssistiu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ResultAssistiu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPainelTextAreaSinopse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(11, 11, 11)
-                        .addComponent(ButtonVoltar)
-                        .addGap(10, 10, 10))))
+                            .addComponent(ResultAssistiu)
+                            .addComponent(LabelAssistiu))
+                        .addContainerGap(32, Short.MAX_VALUE))))
         );
 
         pack();
